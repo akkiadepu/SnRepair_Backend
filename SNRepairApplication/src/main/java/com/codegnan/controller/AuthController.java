@@ -41,8 +41,6 @@ public class AuthController {
 	private CustomerAdminServiceImple adminServiceImple;
 	
 	
-	
-	
 	public AuthController(AdminRepo adminRepo, JwtProvider jwtProvider, PasswordEncoder passwordEncoder,
 			CustomerAdminServiceImple adminServiceImple) {
 	
