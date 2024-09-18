@@ -97,5 +97,44 @@ public class StorageService {
     public List<FileData> getAllProjectActivities() {
         return fileDataRepo.findAll();
     }
+    
+    public List<FileData> getLatestActivities() {
+        return fileDataRepo.findLatestActivities();
+    }
+    
+    
+    public void saveActivity(FileData fileData) {
+        fileDataRepo.save(fileData);
+    }
+    
+    public String uploadImage(MultipartFile image) throws IOException {
+        // Define the path where the image will be saved
+        String imagePath = FOLDER_PATH + image.getOriginalFilename();
+
+        // Save the image to the file system
+        image.transferTo(new File(imagePath));
+
+        // Return the image path for reference
+        return imagePath;
+    }
+    
+    public Optional<FileData> getActivityById(Long id) {
+        return fileDataRepo.findById(id);
+    }
+    
+    public void deleteImage(String imagePath) {
+        File imageFile = new File(imagePath);
+        if (imageFile.exists()) {
+            imageFile.delete();
+        }
+    }
+
+  
+
+    public void deleteActivityById(Long id) {
+        fileDataRepo.deleteById(id);
+    }
+    
+   
 	
 }

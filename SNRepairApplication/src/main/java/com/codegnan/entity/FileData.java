@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="Image_Data")
 
-//oihaoiwehfioj
 public class FileData {
     
 	@Id
@@ -28,11 +27,11 @@ public class FileData {
     private String beforeImagePath;
     private String afterImagePath;
 
-    // Default constructor
+  
     public FileData() {
     }
 
-    // Private constructor for the Builder
+
     private FileData(Builder builder) {
         this.projectTitle = builder.projectTitle;
         this.description = builder.description;
@@ -42,7 +41,7 @@ public class FileData {
         this.afterImagePath = builder.afterImagePath;
     }
 
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }
