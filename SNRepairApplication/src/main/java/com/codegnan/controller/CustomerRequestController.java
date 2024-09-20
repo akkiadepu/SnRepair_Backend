@@ -20,7 +20,7 @@ import com.codegnan.service.CustomerRequestServices;
 
 @RestController
 @RequestMapping("/admin/request")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class CustomerRequestController {
 	
 	CustomerRequestServices customerRequestServices;
