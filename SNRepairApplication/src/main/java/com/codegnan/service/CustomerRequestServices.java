@@ -1,5 +1,6 @@
 package com.codegnan.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,11 +37,14 @@ public class CustomerRequestServices {
 	}
 	
 	public CustomerRequestEntity saveRequest(CustomerRequestEntity requestEntity) {
+		 requestEntity.setSubmittedAt(new Date());
 		return customerRequestRepo.save(requestEntity);
 	}
 	
 	public CustomerRequestEntity editRequest(CustomerRequestEntity requestEntity) throws invalidRequestIdExection {
 		findRequestById(requestEntity.getId());
+		 // Optionally update the submittedAt field if desired
+        // requestEntity.setSubmittedAt(new Date());
 		customerRequestRepo.save(requestEntity);
 		return requestEntity;
 		

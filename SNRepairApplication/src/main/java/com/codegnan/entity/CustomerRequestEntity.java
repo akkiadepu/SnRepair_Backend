@@ -1,17 +1,19 @@
 package com.codegnan.entity;
 
+import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.Id;
+import java.util.Date;
 
 @Entity
-@Table(name = "Customer-requests")
+@Table(name = "Customer_requests")
 public class CustomerRequestEntity {
-	
-	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
@@ -22,13 +24,19 @@ public class CustomerRequestEntity {
 	private String address;
 	private String yourMessage;
 	
+	 @Temporal(TemporalType.TIMESTAMP)
+	    @Column(name = "submitted_at", updatable = false)
+	    private Date submittedAt;
+	
 	public CustomerRequestEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public CustomerRequestEntity(Long id, String name, String email, String number, String vehicleModel, String address,
-			String yourMessage) {
+			String yourMessage, Date submittedAt) {
 		super();
 		Id = id;
 		this.name = name;
@@ -37,7 +45,11 @@ public class CustomerRequestEntity {
 		this.vehicleModel = vehicleModel;
 		this.address = address;
 		this.yourMessage = yourMessage;
+		this.submittedAt = submittedAt;
 	}
+	
+
+
 
 	public Long getId() {
 		return Id;
@@ -94,17 +106,21 @@ public class CustomerRequestEntity {
 	public void setYourMessage(String yourMessage) {
 		this.yourMessage = yourMessage;
 	}
+	
+	 public Date getSubmittedAt() {
+	        return submittedAt;
+	    }
+
+	    public void setSubmittedAt(Date submittedAt) {
+	        this.submittedAt = submittedAt;
+	    }
 
 	
 	@Override
-	public String toString() {
-		return "CustomerRequestEntity [Id=" + Id + ", name=" + name + ", email=" + email + ", number=" + number
-				+ ", vehicleModel=" + vehicleModel + ", address=" + address + ", yourMessage=" + yourMessage + "]";
-	}
+	 public String toString() {
+        return "CustomerRequestEntity [Id=" + Id + ", name=" + name + ", email=" + email + 
+               ", number=" + number + ", vehicleModel=" + vehicleModel + ", address=" + address + 
+               ", yourMessage=" + yourMessage + ", submittedAt=" + submittedAt + "]";
+    }
 	
-	
-	
-	
-	
-
 }
