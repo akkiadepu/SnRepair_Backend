@@ -36,6 +36,7 @@ public class AppConfig {
 				
 				cfg.setAllowedOrigins(Arrays.asList(
 						"http://localhost:3000",
+						"http://localhost:3001",
 						"http://localhost:4200",
 						"https://sn-repair-enterprises.vercel.app/",
 						"https://sn-repair-frothend-react.vercel.app/"

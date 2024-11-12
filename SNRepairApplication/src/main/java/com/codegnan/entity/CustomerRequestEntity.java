@@ -23,10 +23,9 @@ public class CustomerRequestEntity {
 	private String vehicleModel;
 	private String address;
 	private String yourMessage;
-	
-	 @Temporal(TemporalType.TIMESTAMP)
-	    @Column(name = "submitted_at", updatable = false)
-	    private Date submittedAt;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "submitted_at", updatable = false)
+	private Date submittedAt;
 	
 	public CustomerRequestEntity() {
 		super();
@@ -48,8 +47,6 @@ public class CustomerRequestEntity {
 		this.submittedAt = submittedAt;
 	}
 	
-
-
 
 	public Long getId() {
 		return Id;
