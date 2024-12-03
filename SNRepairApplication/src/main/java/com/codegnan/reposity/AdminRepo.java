@@ -11,3 +11,4 @@ public interface AdminRepo extends JpaRepository<EntityAdmin, Long> {
 	
 
 }
+
