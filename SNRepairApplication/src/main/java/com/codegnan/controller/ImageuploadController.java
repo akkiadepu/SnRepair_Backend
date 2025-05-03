@@ -51,9 +51,9 @@ public class ImageuploadController {
 	 
 	 
 	 @GetMapping("/fileSystem/{fileName}")
-	 public ResponseEntity<byte[]> downloadBeforeAndAfterImages(@PathVariable String fileName) throws IOException {
-	     File file = new File("E:/snrepair-app/src/ImageDic/" + fileName);//remeber this to change 
-	     
+	 public ResponseEntity<byte[]> getDownloadImages(@PathVariable String fileName) throws IOException {
+	     File file = new File("/tmp/ImageDic/" + fileName);//remeber this to change 
+//	     E:/snrepair-app/src/ImageDic/
 	     if (!file.exists()) {
 	         throw new FileNotFoundException("File not found");
 	     }
