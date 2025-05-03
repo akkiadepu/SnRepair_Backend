@@ -39,8 +39,7 @@ public class AppConfig {
 						"http://localhost:3001",
 						"http://localhost:4200",
 						"https://sn-repair-enterprises.vercel.app/",
-						"https://sn-repair-frothend-react.vercel.app/"
-						
+						"https://sn-repair-final-ui.vercel.app/"
 						));
 				
 				cfg.setAllowedMethods(Collections.singletonList("*"));

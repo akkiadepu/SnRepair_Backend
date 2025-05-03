@@ -1,13 +1,13 @@
 package com.codegnan.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
-
-
 
 @Entity
 @Table(name="Image_Data")
@@ -19,12 +19,18 @@ public class FileData {
     private Long id;
 
     private String projectTitle;
+   
+    @Column(length = 10000)
     private String description;
     
     private String beforeImageName;
     private String afterImageName;
     
+    @Lob
+    @Column(length = 10000)
     private String beforeImagePath;
+    @Lob
+    @Column(length = 10000)
     private String afterImagePath;
 
   
