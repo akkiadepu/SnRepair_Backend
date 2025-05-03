@@ -25,7 +25,7 @@ import com.codegnan.service.CustomerAdminServiceImple;
 
 @RestController
 @RequestMapping("/admin")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class AuthController {
 	
 	

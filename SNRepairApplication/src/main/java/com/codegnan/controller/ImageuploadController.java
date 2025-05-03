@@ -29,7 +29,7 @@ import java.nio.file.Files;
 
 @RestController
 @RequestMapping("/admin/image")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ImageuploadController {
 	
 	@Autowired

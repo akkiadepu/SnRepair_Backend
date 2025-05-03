@@ -29,11 +29,23 @@ public class StorageService {
 	private static final Logger logger = LoggerFactory.getLogger(StorageService.class);
 	
 
-	private final String FOLDER_PATH = "E:/snrepair-app/src/ImageDic/";
-
+//	private final String FOLDER_PATH = "E:/snrepair-app/src/ImageDic/";
+	 private final String FOLDER_PATH = "/tmp/ImageDic/";
  
     public String addActivity(String projectTitle, String description, MultipartFile beforeImage, MultipartFile afterImage) throws IOException {
+    	 File dir = new File(FOLDER_PATH);
+         if (!dir.exists()) {
+             dir.mkdirs();
+         }
+
+         // Validate files
+         if (beforeImage.isEmpty() || afterImage.isEmpty()) {
+             throw new IOException("Uploaded files cannot be empty");
+         }
+         
     	logger.debug("the add image and projecttitle and desc and beforeImage and afterName to path ");
+    	
+    	
         String beforeImagePath = FOLDER_PATH + beforeImage.getOriginalFilename();
         String afterImagePath = FOLDER_PATH + afterImage.getOriginalFilename();
 
