@@ -29,8 +29,8 @@ public class StorageService {
 	private static final Logger logger = LoggerFactory.getLogger(StorageService.class);
 	
 
-//	private final String FOLDER_PATH = "E:/snrepair-app/src/ImageDic/";
-	 private final String FOLDER_PATH = "/tmp/ImageDic/";
+//	private final String FOLDER_PATH = "E:/snrepair-app/src/ImageDic/"; // this is you want ro run at local
+	 private final String FOLDER_PATH = "/tmp/ImageDic/"; // if you want run in aws
  
     public String addActivity(String projectTitle, String description, MultipartFile beforeImage, MultipartFile afterImage) throws IOException {
     	 File dir = new File(FOLDER_PATH);

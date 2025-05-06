@@ -54,6 +54,7 @@ public class ImageuploadController {
 	 public ResponseEntity<byte[]> getDownloadImages(@PathVariable String fileName) throws IOException {
 	     File file = new File("/tmp/ImageDic/" + fileName);//remeber this to change 
 //	     E:/snrepair-app/src/ImageDic/
+//	     File file = new File("E:/snrepair-app/src/ImageDic/" + fileName);
 	     if (!file.exists()) {
 	         throw new FileNotFoundException("File not found");
 	     }
